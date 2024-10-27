@@ -1,8 +1,32 @@
-# FashionablyLate(お問い合わせフォーム)
+#　アプリケーション名
+- Atte（アット）
+  ある企業の勤怠管理システム
+  ![alt text](<スクリーンショット 2024-10-27 22.51.29.png>)
+
+## 作成した目的
+- 人事評価のため
+
+## アプリケーションURL
+- 作成中
+
+## 機能一覧
+- ログイン機能、メール認証機能、勤務状態によるボタン制御、勤務時間/休憩時間管理、日付別勤怠管理、社員別勤怠管理
+
+##　使用技術
+- PHP8.3.0
+- Laravel8.83.27
+- MySQL8.0.26
+
+## テーブル設計
+- ![alt text](image-1.png)
+
+## ER図
+- ![alt text](image-2.png)
+
 
 ## 環境構築
 **Dockerビルド**
-1. `git clone git@github.com:estra-inc/confirmation-test-contact-form.git`
+1. `git clone git@github.com:shinya-05/Atte.git`
 2. DockerDesktopアプリを立ち上げる
 3. `docker-compose up -d --build`
 
@@ -47,10 +71,3 @@ php artisan db:seed
 - PHP8.3.0
 - Laravel8.83.27
 - MySQL8.0.26
-
-## ER図
-![alt text](image.png)
-
-## URL
-- 開発環境：http://localhost/
-- phpMyAdmin:：http://localhost:8080/
