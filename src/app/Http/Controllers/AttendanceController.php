@@ -157,6 +157,6 @@ class AttendanceController extends Controller
         $users = User::paginate(5);
         $displayDate = Carbon::now();
 
-        return view('user', compact('users', 'displayDate'));
+        return view('user_list', compact('users', 'displayDate'));
     }
 }
