@@ -100,7 +100,7 @@ class AttendanceController extends Controller
             ->whereDate('date', $displayDate)
             ->paginate(5);
 
-        return view('attendance_date', compact('users', 'displayDate'));
+        return view('date_list', compact('users', 'displayDate'));
     }
 
     // 日別一覧 / 抽出処理
@@ -120,7 +120,7 @@ class AttendanceController extends Controller
             ->whereDate('date', $displayDate)
             ->paginate(5);
 
-        return view('attendance_date', compact('users', 'displayDate'));
+        return view('date_list', compact('users', 'displayDate'));
     }
 
     // 勤怠表表示
@@ -132,7 +132,7 @@ class AttendanceController extends Controller
             ->paginate(5);
         $userList = User::all();
 
-        return view('attendance_user', compact('users', 'displayUser', 'userList'));
+        return view('attendance_list', compact('users', 'displayUser', 'userList'));
     }
 
     // 勤怠表 / 検索処理
@@ -148,7 +148,7 @@ class AttendanceController extends Controller
 
         $userList = User::all();
 
-        return view('attendance_user', compact('users', 'displayUser', 'userList'));
+        return view('attendance_list', compact('users', 'displayUser', 'userList'));
     }
 
     // ユーザー一覧表示

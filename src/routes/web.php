@@ -50,7 +50,7 @@ Route::get('/logout', [AuthenticatedSessionController::class, 'destroy'])
 // 管理ページ / 日付別
 Route::get('/attendance/date', [AttendanceController::class, 'indexDate'])
     ->name('attendance/date');
-Route::post('/attendance/date', [AttendanceController::class, 'perDate'])
+Route::get('/attendance/per/date', [AttendanceController::class, 'perDate'])
     ->name('per/date');
 
 // 管理ページ / ユーザー別

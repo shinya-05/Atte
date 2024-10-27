@@ -1,0 +1,65 @@
+/* ページネーション全体のラップ */
+.pagination__wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* ページネーションのリスト */
+.pagination__nav {
+    display: flex;
+    padding: 0;
+    list-style: none;
+}
+
+/* ページネーションの各項目（ボタンやページ番号） */
+.pagination__list {
+    list-style: none;
+    margin: 0px;
+}
+
+/* 各ページリンクのスタイル */
+.pagination__item {
+    display: block;
+    padding: 10px 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: #007bff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* ホバー時のリンクのスタイル */
+.pagination__item:hover {
+    background-color: #e9ecef;
+    border-color: #ddd;
+}
+
+/* アクティブなページのスタイル */
+.pagination__list.active .pagination__item {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+    font-weight: bold;
+}
+
+/* ページネーションの前後ボタン（disabledの時） */
+.pagination__list[aria-disabled="true"] .pagination__item {
+    color: #6c757d;
+    pointer-events: none;
+    background-color: #fff;
+    border-color: #ddd;
+}
+
+/* 最初と最後のボタンに角丸を追加 */
+.pagination__list:first-child .pagination__item {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.pagination__list:last-child .pagination__item {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}

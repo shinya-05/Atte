@@ -2,65 +2,44 @@
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/register.css') }}">
 @endsection
 
 @section('content')
-    <div class="header__wrap">
-        <span class="header__text">
-            会員登録
-        </span>
-    </div>
-
-    <form class="form__wrap" action="{{ route('register') }}" method="post">
-        @csrf
-        <div class="form__content">
-            <div class="form__item">
-                <input class="form__input" type="text" name="name" placeholder="名前" value="{{ old('name') }}">
-            </div>
-            <div class="error__item">
+    <div class="container">
+        <h1>会員登録</h1>
+        <form action="/register" method="POST">
+            @csrf
+            <div class="form-group">
+                <input type="text" name="name" placeholder="名前" value="{{ old('name') }}" required>
                 @error('name')
-                    <span class="error__message">{{ $message }}</span>
+                    <div class="error__message">{{ $message }}</div>
                 @enderror
             </div>
-        </div>
 
-        <div class="form__content">
-            <div class="form__item">
-                <input class="form__input" type="email" name="email" placeholder="メールアドレス" value="{{ old('email') }}">
-            </div>
-            <div class="error__item">
+            <div class="form-group">
+                <input type="email" name="email" placeholder="メールアドレス" value="{{ old('email') }}" required>
                 @error('email')
-                    <span class="error__message">{{ $message }}</span>
+                    <div class="error__message">{{ $message }}</div>
                 @enderror
             </div>
-        </div>
-        <div class="form__content">
-            <div class="form__item">
-                <input class="form__input" type="password" name="password" placeholder="パスワード">
-            </div>
-            <div class="error__item">
-                @error('password')
-                    <span class="error__message">{{ $message }}</span>
-                @enderror
-            </div>
-        </div>
-        <div class="form__item">
-            <input class="form__input" type="password" name="password_confirmation" placeholder="確認用パスワード">
-        </div>
-        <div class="form__item form__item-button">
-            <button class="form__input form__input-button">会員登録</button>
-        </div>
-    </form>
 
-    <div class="register__wrap">
-        <div class="register__item">
-            <p class="register__item-text">
-                アカウントをお持ちの方はこちらから
-            </p>
-        </div>
-        <div class="register__button">
-            <a class="register__item-button" href="/login">ログイン</a>
+            <div class="form-group">
+                <input type="password" name="password" placeholder="パスワード" required>
+                @error('password')
+                    <div class="error__message">{{ $message }}</div>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                <input type="password" name="password_confirmation" placeholder="確認用パスワード" required>
+            </div>
+
+            <button type="submit" class="btn">会員登録</button>
+        </form>
+
+        <div class="login-link">
+            <p>アカウントをお持ちでない方はこちらから</p>
+            <a href="/login">ログイン</a>
         </div>
     </div>
 @endsection

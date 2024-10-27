@@ -1,6 +1,5 @@
 @extends('layouts.app')
 
-<link rel="stylesheet" href="{{ asset('css/login.css') }}">
 <link rel="stylesheet" href="{{ asset('css/verify-email.css') }}">
 
 @section('content')
@@ -13,9 +12,9 @@
         <p class="body__text">
             {{ __('もし確認用メールが送信されていない場合は、下記をクリックしてください。') }}
         </p>
-        <form class="form__item form__item-button" method="POST" action="{{ route('verification.send') }}">
+        <form method="POST" action="{{ route('verification.send') }}">
             @csrf
-            <button type="submit" class="form__input form__input-button">
+            <button type="submit" class="form__input">
                 {{ __('確認メールを再送信する') }}
             </button>
         </form>

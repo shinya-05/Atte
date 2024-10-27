@@ -1,10 +1,24 @@
+.header__wrap {
+    padding-top: 60px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.header__text {
+    font-size: 18px;
+    font-weight: bold;
+}
+
 .body__wrap {
     text-align: center;
 }
 
-.alert-success {
-    font-size: 20px;
+.form__input {
+    font-size: 18px;
+    border-radius: 3px;
+    border: none;
     color: rgb(38, 81, 207);
+    text-decoration: underline;
 }
 
 .back__button {
